@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 03/11/2022
 Author: Bruno Limón
