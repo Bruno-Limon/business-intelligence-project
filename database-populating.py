@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Friday November 3
-Authors: Antonio Calabrese & Bruno Limón
+03/11/2022
+Author: Bruno Limón
 """
 
 import pyodbc as odbc

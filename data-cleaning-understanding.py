@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Monday October 31
-Authors: Antonio Calabrese & Bruno Limón
+31/10/2022
+Author: Bruno Limón
 """
 
 # Imports
