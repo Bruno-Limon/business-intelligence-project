@@ -1,0 +1,2906 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/1/2022 11:03:21 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-7J5LTALE"
+  DTS:CreatorName="LAPTOP-7J5LTALE\Pavilion"
+  DTS:DTSID="{203EF6FF-CE29-44A5-8AB2-3CAEC07F65C4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="143"
+  DTS:VersionGUID="{7174EA01-EDFC-44B6-94E0-D175395BF91F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2F4576B9-45C8-438B-99AD-ACBB67FA9BA9}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Pavilion\Desktop\LDS_Group3_Part2\LDS_Group3_Part2\Outputs\output_assignment2.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="32"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region"
+              DTS:DTSID="{14273A0B-9E83-49AF-95F6-E233DCAB4C26}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="totCorrectRegion"
+              DTS:DTSID="{A705AD38-C07C-4125-9FAC-978EA9F8BE65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="totCorrectCountry"
+              DTS:DTSID="{BEB39616-1DCE-49D8-8337-ED749FC2AE57}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="14"
+              DTS:DataScale="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="%w.r.t.Country"
+              DTS:DTSID="{D1CC8375-D468-4BA0-A00A-1369ACAB3AFB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7EFB1683-DEFC-464A-ABDD-91E06A314989}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Pavilion\Desktop\LDS_Group3_Part2\LDS_Group3_Part2\Outputs\country.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="16"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country_name"
+              DTS:DTSID="{283B8131-0DE0-4EB7-84D3-013F0D67E21F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="iscorrect"
+              DTS:DTSID="{4335820D-1B22-40C3-84A6-3C36A93D6167}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{431F1CC6-A64C-4B02-B58F-CB59861D8FCD}"
+      DTS:ObjectName="lds.di.unipi.it.Group_3_DB.Group_3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=lds.di.unipi.it;User ID=Group_3;Initial Catalog=Group_3_DB;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{431F1CC6-A64C-4B02-B58F-CB59861D8FCD}lds.di.unipi.it.Group_3_DB.Group_3;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWuvn2kevj0y3vP5GbRV43AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA3RLyfXayBnMz8YnXG6qD4ZxTNS9iq7VV3mQ/R74nMGAAAAAAOgAAAAAIAACAAAACyanKkbx9Uk96n15c51XKzP7f/omLAxrlx9VVlkzPFVCAAAACYOkykGXPWoUYx7p3NU3s8CfC5vIDnhxeYXkn8PGDnoEAAAAB50BjroCOGaH4t/K6cGEWYsYlxRODfu69g44TS1lanb2PA68O7FMDFsbkyTgxUdJ2yi+ud+G9/Ok0+NxV+u+xr</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3E71DCF0-2A44-4511-A451-A1CAB7336572}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Aggregating correct answers by country"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregating correct answers by country"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Aggregating correct answers by country.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Aggregating correct answers by country.Inputs[Aggregate Input 1].Columns[country_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="country_name"
+                      lineageId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Match Output].Columns[country_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Aggregating correct answers by country.Inputs[Aggregate Input 1].Columns[iscorrect]"
+                      cachedDataType="i4"
+                      cachedName="iscorrect"
+                      lineageId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].Columns[iscorrect]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Aggregating correct answers by country.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Aggregating correct answers by country.Outputs[Aggregate Output 1].Columns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Aggregating correct answers by country.Outputs[Aggregate Output 1].Columns[country_name]"
+                      name="country_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Match Output].Columns[country_name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Aggregating correct answers by country.Outputs[Aggregate Output 1].Columns[iscorrect]"
+                      dataType="ui8"
+                      lineageId="Package\Data Flow Task\Aggregating correct answers by country.Outputs[Aggregate Output 1].Columns[iscorrect]"
+                      name="iscorrect">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].Columns[iscorrect]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Aggregating correct answers by geoid"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregating correct answers by geoid"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Aggregating correct answers by geoid.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Aggregating correct answers by geoid.Inputs[Aggregate Input 1].Columns[iscorrect]"
+                      cachedDataType="i4"
+                      cachedName="iscorrect"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[iscorrect]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Aggregating correct answers by geoid.Inputs[Aggregate Input 1].Columns[geoid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="geoid"
+                      lineageId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Match Output].Columns[geoid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1].Columns[geoid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1].Columns[geoid]"
+                      name="geoid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Match Output].Columns[geoid]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1].Columns[iscorrect]"
+                      dataType="ui8"
+                      lineageId="Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1].Columns[iscorrect]"
+                      name="iscorrect">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[iscorrect]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Answer Access"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Answer Access"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Group_3].[Answers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Answer Access.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[userid]"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[userid]"
+                      name="userid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[iscorrect]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[iscorrect]"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[iscorrect]"
+                      name="iscorrect"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[answerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="answerid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[questionid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="questionid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="userid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[organizationid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="organizationid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[dateid]"
+                      dataType="i4"
+                      name="dateid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[subjectid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="48"
+                      name="subjectid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[answer_value]"
+                      dataType="i4"
+                      name="answer_value" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[correct_answer]"
+                      dataType="i4"
+                      name="correct_answer" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[iscorrect]"
+                      dataType="i4"
+                      name="iscorrect" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[confidence]"
+                      dataType="r8"
+                      name="confidence" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[userid]"
+                      name="userid" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[iscorrect]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[iscorrect]"
+                      name="iscorrect" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Answer Access 2"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Answer Access 2"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Group_3].[Answers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Answer Access 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].Columns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[userid]"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].Columns[userid]"
+                      name="userid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].Columns[iscorrect]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[iscorrect]"
+                      lineageId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].Columns[iscorrect]"
+                      name="iscorrect"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[answerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="answerid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[questionid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="questionid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="userid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[organizationid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="organizationid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[dateid]"
+                      dataType="i4"
+                      name="dateid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[subjectid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="48"
+                      name="subjectid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[answer_value]"
+                      dataType="i4"
+                      name="answer_value" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[correct_answer]"
+                      dataType="i4"
+                      name="correct_answer" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[iscorrect]"
+                      dataType="i4"
+                      name="iscorrect" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].ExternalColumns[confidence]"
+                      dataType="r8"
+                      name="confidence" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Error Output].Columns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Error Output].Columns[userid]"
+                      name="userid" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Error Output].Columns[iscorrect]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Error Output].Columns[iscorrect]"
+                      name="iscorrect" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Condiitonal Splitting for correct answers"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Condiitonal Splitting for correct answers"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Inputs[Conditional Split Input].Columns[iscorrect]"
+                      cachedDataType="i4"
+                      cachedName="iscorrect"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[iscorrect]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Outputs[correct]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="correct"
+                  synchronousInputId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[iscorrect]} == 1</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">iscorrect == 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Condiitonal Splitting for correct answers 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Inputs[Conditional Split Input].Columns[iscorrect]"
+                      cachedDataType="i4"
+                      cachedName="iscorrect"
+                      lineageId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].Columns[iscorrect]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Outputs[correct]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="correct"
+                  synchronousInputId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].Columns[iscorrect]} == 1</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">iscorrect == 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[totCorrectRegion]"
+                      cachedDataType="ui8"
+                      cachedName="totCorrectRegion"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[totCorrectRegion]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[totCorrectCountry]"
+                      cachedDataType="ui8"
+                      cachedName="totCorrectCountry"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[totCorrectCountry]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[%w.r.t.Country]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[%w.r.t.Country]"
+                      name="%w.r.t.Country"
+                      scale="4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DECIMAL,4)((DT_DECIMAL,4)#{Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[totCorrectRegion]} / (DT_DECIMAL,4)#{Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[totCorrectCountry]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DECIMAL,4)((DT_DECIMAL,4)totCorrectRegion / (DT_DECIMAL,4)totCorrectCountry)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[region]"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[totCorrectRegion]"
+                      cachedDataType="ui8"
+                      cachedName="totCorrectRegion"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[totCorrectRegion]"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[totCorrectRegion]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[totCorrectCountry]"
+                      cachedDataType="ui8"
+                      cachedName="totCorrectCountry"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[totCorrectCountry]"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[totCorrectCountry]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[%w.r.t.Country]"
+                      cachedDataType="decimal"
+                      cachedName="%w.r.t.Country"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[%w.r.t.Country]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[%w.r.t.Country]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[totCorrectRegion]"
+                      dataType="ui8"
+                      name="totCorrectRegion" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[totCorrectCountry]"
+                      dataType="ui8"
+                      name="totCorrectCountry" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[%w.r.t.Country]"
+                      dataType="decimal"
+                      name="%w.r.t.Country"
+                      scale="4" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Lookup Geography for country"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Geography for country"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Group_3].[Geography]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [Group_3].[Geography]) [refTable]
+where [refTable].[geoid] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="geoid" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region" dataType="DT_STR" length="32" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="country_name" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="continent" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Match Output].Columns[geoid]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup Geography for country.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup Geography for country.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup Geography for country.Inputs[Lookup Input].Columns[geoid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="geoid"
+                      lineageId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Match Output].Columns[geoid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">geoid</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Geography for country.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Match Output].Columns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Match Output].Columns[country_name]"
+                      name="country_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">country_name</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Match Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="32"
+                      lineageId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Match Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">region</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Geography for country.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Geography for country.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Lookup Geography for region"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Geography for region"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Group_3].[Geography]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [Group_3].[Geography]) [refTable]
+where [refTable].[geoid] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="geoid" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region" dataType="DT_STR" length="32" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="country_name" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="continent" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1].Columns[geoid]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup Geography for region.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup Geography for region.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup Geography for region.Inputs[Lookup Input].Columns[geoid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="geoid"
+                      lineageId="Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1].Columns[geoid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">geoid</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Geography for region.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Match Output].Columns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Match Output].Columns[country_name]"
+                      name="country_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">country_name</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Match Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="32"
+                      lineageId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Match Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">region</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Geography for region.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Geography for region.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Lookup Users for geoid"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Users for geoid"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Group_3].[Users]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [Group_3].[Users]) [refTable]
+where [refTable].[userid] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="userid" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="dateid" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="geoid" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="gender" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[userid]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup Users for geoid.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup Users for geoid.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup Users for geoid.Inputs[Lookup Input].Columns[userid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="userid"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[userid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">userid</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Users for geoid.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Match Output].Columns[geoid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Match Output].Columns[geoid]"
+                      name="geoid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">geoid</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Users for geoid.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Users for geoid.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Lookup Users for geoid 2"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Users for geoid 2"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Group_3].[Users]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [Group_3].[Users]) [refTable]
+where [refTable].[userid] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="userid" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="dateid" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="geoid" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="gender" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].Columns[userid]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup Users for geoid 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup Users for geoid 2.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup Users for geoid 2.Inputs[Lookup Input].Columns[userid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="userid"
+                      lineageId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output].Columns[userid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">userid</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Users for geoid 2.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Match Output].Columns[geoid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Match Output].Columns[geoid]"
+                      name="geoid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">geoid</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Users for geoid 2.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup Users for geoid 2.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[country_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="country_name"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[country_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="region"
+                      lineageId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[iscorrect]"
+                      cachedDataType="ui8"
+                      cachedName="iscorrect"
+                      lineageId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[iscorrect]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[country_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="country_name"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sorting by country_name 2.Outputs[Sort Output].Columns[country_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[iscorrect]"
+                      cachedDataType="ui8"
+                      cachedName="iscorrect"
+                      lineageId="Package\Data Flow Task\Sorting by country_name 2.Outputs[Sort Output].Columns[iscorrect]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[region]"
+                      name="region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[totCorrectRegion]"
+                      dataType="ui8"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[totCorrectRegion]"
+                      name="totCorrectRegion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[iscorrect]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[country_name]"
+                      name="country_name"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[country_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[totCorrectCountry]"
+                      dataType="ui8"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[totCorrectCountry]"
+                      name="totCorrectCountry">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[iscorrect]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sorting by country_name"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sorting by country_name"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sorting by country_name.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name.Inputs[Sort Input].Columns[geoid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="geoid"
+                      lineageId="Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1].Columns[geoid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name.Inputs[Sort Input].Columns[iscorrect]"
+                      cachedDataType="ui8"
+                      cachedName="iscorrect"
+                      lineageId="Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1].Columns[iscorrect]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name.Inputs[Sort Input].Columns[country_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="country_name"
+                      lineageId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Match Output].Columns[country_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name.Inputs[Sort Input].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="region"
+                      lineageId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Match Output].Columns[region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[geoid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[geoid]"
+                      name="geoid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1].Columns[geoid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[iscorrect]"
+                      dataType="ui8"
+                      lineageId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[iscorrect]"
+                      name="iscorrect">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1].Columns[iscorrect]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[country_name]"
+                      name="country_name"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Match Output].Columns[country_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output].Columns[region]"
+                      name="region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Match Output].Columns[region]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sorting by country_name 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sorting by country_name 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sorting by country_name 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name 2.Inputs[Sort Input].Columns[country_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="country_name"
+                      lineageId="Package\Data Flow Task\Aggregating correct answers by country.Outputs[Aggregate Output 1].Columns[country_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name 2.Inputs[Sort Input].Columns[iscorrect]"
+                      cachedDataType="ui8"
+                      cachedName="iscorrect"
+                      lineageId="Package\Data Flow Task\Aggregating correct answers by country.Outputs[Aggregate Output 1].Columns[iscorrect]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sorting by country_name 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name 2.Outputs[Sort Output].Columns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Sorting by country_name 2.Outputs[Sort Output].Columns[country_name]"
+                      name="country_name"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Aggregating correct answers by country.Outputs[Aggregate Output 1].Columns[country_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting by country_name 2.Outputs[Sort Output].Columns[iscorrect]"
+                      dataType="ui8"
+                      lineageId="Package\Data Flow Task\Sorting by country_name 2.Outputs[Sort Output].Columns[iscorrect]"
+                      name="iscorrect">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Aggregating correct answers by country.Outputs[Aggregate Output 1].Columns[iscorrect]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Aggregate Output 1]"
+              endId="Package\Data Flow Task\Lookup Geography for region.Inputs[Lookup Input]"
+              name="Aggregate Output 1"
+              startId="Package\Data Flow Task\Aggregating correct answers by geoid.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Aggregate Output 11]"
+              endId="Package\Data Flow Task\Sorting by country_name 2.Inputs[Sort Input]"
+              name="Aggregate Output 1"
+              startId="Package\Data Flow Task\Aggregating correct answers by country.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[correct]"
+              endId="Package\Data Flow Task\Lookup Users for geoid 2.Inputs[Lookup Input]"
+              name="correct"
+              startId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Outputs[correct]" />
+            <path
+              refId="Package\Data Flow Task.Paths[correct1]"
+              endId="Package\Data Flow Task\Lookup Users for geoid.Inputs[Lookup Input]"
+              name="correct"
+              startId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Outputs[correct]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Task\Aggregating correct answers by geoid.Inputs[Aggregate Input 1]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup Users for geoid.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output1]"
+              endId="Package\Data Flow Task\Sorting by country_name.Inputs[Sort Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup Geography for region.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output2]"
+              endId="Package\Data Flow Task\Lookup Geography for country.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup Users for geoid 2.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output3]"
+              endId="Package\Data Flow Task\Aggregating correct answers by country.Inputs[Aggregate Input 1]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup Geography for country.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Merge Join Output]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="Merge Join Output"
+              startId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Condiitonal Splitting for correct answers 2.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Answer Access 2.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task\Condiitonal Splitting for correct answers.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output]"
+              endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sorting by country_name.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output1]"
+              endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sorting by country_name 2.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="71.2142868333934,40.676471081572" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\Data Flow Task\Sorting by country_name 2"
+          TopLeft="575.000009792192,328.906867432691" />
+        <NodeLayout
+          Size="129.6,54.4"
+          Id="Package\Data Flow Task\Lookup Geography for region"
+          TopLeft="489.361117840287,128.663400179375" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Data Flow Task\Condiitonal Splitting for correct answers"
+          TopLeft="122.563494057071,125.116339881198" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task\Flat File Destination"
+          TopLeft="792.460330955837,251.692814062211" />
+        <NodeLayout
+          Size="129.6,55.2"
+          Id="Package\Data Flow Task\Lookup Users for geoid"
+          TopLeft="255.829367831518,28.6143791683817" />
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Data Flow Task\Sorting by country_name"
+          TopLeft="582.813500384153,43.1650329672205" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="808.53175980096,178.089871853487" />
+        <NodeLayout
+          Size="129.6,51.2"
+          Id="Package\Data Flow Task\Lookup Users for geoid 2"
+          TopLeft="230.161579784185,344.49614228548" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Data Flow Task\Merge Join"
+          TopLeft="653.174614298101,178.089871853487" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Data Flow Task\Answer Access"
+          TopLeft="46.7698419726625,41.8626443476032" />
+        <NodeLayout
+          Size="129.6,52"
+          Id="Package\Data Flow Task\Lookup Geography for country"
+          TopLeft="370.976362128988,344.411365528777" />
+        <NodeLayout
+          Size="191.2,41.6"
+          Id="Package\Data Flow Task\Condiitonal Splitting for correct answers 2"
+          TopLeft="119.841271882155,263.442813834311" />
+        <NodeLayout
+          Size="165.6,50.4"
+          Id="Package\Data Flow Task\Aggregating correct answers by country"
+          TopLeft="470.896831766143,233.704251325736" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Data Flow Task\Answer Access 2"
+          TopLeft="50.5396833067038,344.225820078308" />
+        <NodeLayout
+          Size="155.2,52"
+          Id="Package\Data Flow Task\Aggregating correct answers by geoid"
+          TopLeft="398.686513121504,28.2124183036327" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="715.32739067446,84.7650329672205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,93.3248388862665"
+              Start="0,0"
+              End="0,85.8248388862665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,85.8248388862665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="120.369841972662,83.4626443476032">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66.7269854177424,41.6536955335943"
+              Start="0,0"
+              End="66.7269854177424,34.1536955335943">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.7830774262641" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.7830774262641"
+                    Point2="0,24.7830774262641"
+                    Point3="4,24.7830774262641" />
+                  <mssgle:LineSegment
+                    End="62.7269854177424,24.7830774262641" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62.7269854177424,24.7830774262641"
+                    Point2="66.7269854177424,24.7830774262641"
+                    Point3="66.7269854177424,28.7830774262641" />
+                  <mssgle:LineSegment
+                    End="66.7269854177424,34.1536955335943" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="128.939683306704,344.225820078308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.9682552421175,-39.1830062439974"
+              Start="0,0"
+              End="55.9682552421175,-31.6830062439974">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-19.3147016406192" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-19.3147016406192"
+                    Point2="0,-23.3147016406192"
+                    Point3="4,-23.3147016406192" />
+                  <mssgle:LineSegment
+                    End="51.9682552421175,-23.3147016406192" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.9682552421175,-23.3147016406192"
+                    Point2="55.9682552421175,-23.3147016406192"
+                    Point3="55.9682552421175,-27.3147016406192" />
+                  <mssgle:LineSegment
+                    End="55.9682552421175,-31.6830062439974" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Merge Join Output]"
+          TopLeft="782.774614298101,198.889871853487">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.7571455028592,0"
+              Start="0,0"
+              End="18.2571455028592,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.2571455028592,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
+          TopLeft="456.043028795654,344.411365528777">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71.387136303822,-60.3071142030407"
+              Start="0,0"
+              End="71.387136303822,-52.8071142030407">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-26.2520080519628" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-26.2520080519628"
+                    Point2="0,-30.2520080519628"
+                    Point3="4,-30.2520080519628" />
+                  <mssgle:LineSegment
+                    End="67.387136303822,-30.2520080519628" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.387136303822,-30.2520080519628"
+                    Point2="71.387136303822,-30.2520080519628"
+                    Point3="71.387136303822,-34.2520080519628" />
+                  <mssgle:LineSegment
+                    End="71.387136303822,-52.8071142030407" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12.497818566839,-25.2520080519628,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
+          TopLeft="315.228246450852,344.49614228548">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.281449011469,-0.0847767567037749"
+              Start="0,0"
+              End="100.281449011469,-7.58477675670377">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.5847767567038" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5847767567038"
+                    Point2="0,-22.5847767567038"
+                    Point3="4,-22.5847767567038" />
+                  <mssgle:LineSegment
+                    End="96.2814490114691,-22.5847767567038" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.2814490114691,-22.5847767567038"
+                    Point2="100.281449011469,-22.5847767567038"
+                    Point3="100.281449011469,-18.5847767567038" />
+                  <mssgle:LineSegment
+                    End="100.281449011469,-7.58477675670377" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="1.94933778698455,-17.5847767567038,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
+          TopLeft="574.427784506953,128.663400179375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.3190492105326,-43.8983672121541"
+              Start="0,0"
+              End="75.3190492105326,-36.3983672121541">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.0619583310055" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.0619583310055"
+                    Point2="0,-22.0619583310055"
+                    Point3="4,-22.0619583310055" />
+                  <mssgle:LineSegment
+                    End="71.3190492105326,-22.0619583310055" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.3190492105326,-22.0619583310055"
+                    Point2="75.3190492105326,-22.0619583310055"
+                    Point3="75.3190492105326,-26.0619583310055" />
+                  <mssgle:LineSegment
+                    End="75.3190492105326,-36.3983672121541" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.5318621134837,-17.0619583310055,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="340.896034498185,83.8143791683817">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110.857145289986,-3.60196086474906"
+              Start="0,0"
+              End="110.857145289986,3.89803913525094">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="106.857145289986,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106.857145289986,22.5"
+                    Point2="110.857145289986,22.5"
+                    Point3="110.857145289986,18.5" />
+                  <mssgle:LineSegment
+                    End="110.857145289986,3.89803913525094" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="7.23718592624299,27.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="881.496045378399,219.689871853487">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.0029422087242"
+              Start="0,0"
+              End="0,24.5029422087242">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5029422087242" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[correct1]"
+          TopLeft="247.630160723738,125.116339881198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.7325404411135,-41.3019607128158"
+              Start="0,0"
+              End="52.7325404411135,-33.8019607128158">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-16.5526835457552" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-16.5526835457552"
+                    Point2="0,-20.5526835457552"
+                    Point3="4,-20.5526835457552" />
+                  <mssgle:LineSegment
+                    End="48.7325404411135,-20.5526835457552" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.7325404411135,-20.5526835457552"
+                    Point2="52.7325404411135,-20.5526835457552"
+                    Point3="52.7325404411135,-24.5526835457552" />
+                  <mssgle:LineSegment
+                    End="52.7325404411135,-33.8019607128158" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="10.2902741268068,-15.5526835457552,32.1519921875,9.1728515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[correct]"
+          TopLeft="245.974605215488,305.042813834311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.9869745686973,39.4533284511696"
+              Start="0,0"
+              End="48.9869745686973,31.9533284511696">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.9777794889384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.9777794889384"
+                    Point2="0,15.9777794889384"
+                    Point3="4,15.9777794889384" />
+                  <mssgle:LineSegment
+                    End="44.9869745686973,15.9777794889384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44.9869745686973,15.9777794889384"
+                    Point2="48.9869745686973,15.9777794889384"
+                    Point3="48.9869745686973,19.9777794889384" />
+                  <mssgle:LineSegment
+                    End="48.9869745686973,31.9533284511696" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="8.41749119059865,20.9777794889384,32.1519921875,9.1728515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Aggregate Output 11]"
+          TopLeft="579.96349843281,284.104251325736">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65.169844692716,44.8026161069548"
+              Start="0,0"
+              End="65.169844692716,37.3026161069548">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4536489970038" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4536489970038"
+                    Point2="0,22.4536489970038"
+                    Point3="4,22.4536489970038" />
+                  <mssgle:LineSegment
+                    End="61.169844692716,22.4536489970038" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.169844692716,22.4536489970038"
+                    Point2="65.169844692716,22.4536489970038"
+                    Point3="65.169844692716,26.4536489970038" />
+                  <mssgle:LineSegment
+                    End="65.169844692716,37.3026161069548" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Aggregate Output 1]"
+          TopLeft="500.819846454837,80.2124183036327">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.0746047187828,48.4509818757419"
+              Start="0,0"
+              End="33.0746047187828,40.9509818757419">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1655231405125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.1655231405125"
+                    Point2="0,24.1655231405125"
+                    Point3="4,24.1655231405125" />
+                  <mssgle:LineSegment
+                    End="29.0746047187828,24.1655231405125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.0746047187828,24.1655231405125"
+                    Point2="33.0746047187828,24.1655231405125"
+                    Point3="33.0746047187828,28.1655231405125" />
+                  <mssgle:LineSegment
+                    End="33.0746047187828,40.9509818757419" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output1]"
+          TopLeft="714.62064537848,328.906867432691">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-109.216995579204"
+              Start="0,0"
+              End="0,-101.716995579204">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-101.716995579204" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup Geography for region">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_3].[Geography]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup Users for geoid">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_3].[Users]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup Users for geoid 2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_3].[Users]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Answer Access">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup Geography for country">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_3].[Geography]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Answer Access 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,1482 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/1/2022 11:03:05 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-7J5LTALE"
+  DTS:CreatorName="LAPTOP-7J5LTALE\Pavilion"
+  DTS:DTSID="{7C049C36-04E2-446A-A329-4E380A2F4EDA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{2E34093C-EBAA-41DD-AFC6-6EFC40C92E22}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4C13ACA7-C0D4-4BBC-AE40-C560B034399C}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Pavilion\Desktop\LDS_Group3_Part2\LDS_Group3_Part2\Outputs\output_assignmen0.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{D7DCAF79-4691-42F7-825B-898E98A5F74F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="userid"
+              DTS:DTSID="{87393E68-973F-4E20-B6FB-13F25F03C356}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="totAnswer"
+              DTS:DTSID="{361BDDA4-B3AC-4180-809D-D747E575FFA9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8926B634-66B4-497A-AFDE-51C3AFBEECD2}"
+      DTS:ObjectName="lds.di.unipi.it.Group_3_DB.Group_3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=lds.di.unipi.it;User ID=Group_3;Initial Catalog=Group_3_DB;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{8926B634-66B4-497A-AFDE-51C3AFBEECD2}lds.di.unipi.it.Group_3_DB.Group_3;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWuvn2kevj0y3vP5GbRV43AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAufGkzgoUGGeb/m37xiN4/7kYmT4jC8k+XdgMBOnAeZgAAAAAOgAAAAAIAACAAAABsXT1xhBkozcFScgywXZO8l58dEPe6vv995ykLCCKRoSAAAABHpzg3x/M2XQ4t9x1pfvy6E8ZQRy1XKJCFKcm7KCRt8EAAAABJnPuNXIM31bs19N+NCoI9BRfdkvZKzoEOrLGqBijBcT5iCrXN/uaQkgaDBqVmr/mPIon9FJUk3zGwbDK+y810</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{450B256D-7585-458B-8FE2-45760EFCD29E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Aggregating totAnswer"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregating totAnswer"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Aggregating totAnswer.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Aggregating totAnswer.Inputs[Aggregate Input 1].Columns[answerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="answerid"
+                      lineageId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[answerid]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Aggregating totAnswer.Inputs[Aggregate Input 1].Columns[userid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="userid"
+                      lineageId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[userid]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Aggregating totAnswer.Inputs[Aggregate Input 1].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      lineageId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[year]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[totAnswer]"
+                      dataType="ui8"
+                      lineageId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[totAnswer]"
+                      name="totAnswer">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[answerid]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[userid]"
+                      name="userid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[userid]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[year]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[year]"
+                      name="year">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[year]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Answer Access"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Answer Access"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Group_3].[Answers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Answer Access.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[answerid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[answerid]"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[answerid]"
+                      name="answerid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[userid]"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[userid]"
+                      name="userid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[dateid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[dateid]"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[dateid]"
+                      name="dateid"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[answerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="answerid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[questionid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="questionid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="userid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[organizationid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="organizationid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[dateid]"
+                      dataType="i4"
+                      name="dateid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[subjectid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="48"
+                      name="subjectid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[answer_value]"
+                      dataType="i4"
+                      name="answer_value" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[correct_answer]"
+                      dataType="i4"
+                      name="correct_answer" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[iscorrect]"
+                      dataType="i4"
+                      name="iscorrect" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].ExternalColumns[confidence]"
+                      dataType="r8"
+                      name="confidence" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[answerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[answerid]"
+                      name="answerid" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[userid]"
+                      name="userid" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[dateid]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[dateid]"
+                      name="dateid" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Date Access"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Date Access"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Group_3].[Date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Date Access.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_3_DB.Group_3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].Columns[dateid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].ExternalColumns[dateid]"
+                      lineageId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].Columns[dateid]"
+                      name="dateid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].Columns[year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      lineageId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].ExternalColumns[dateid]"
+                      dataType="i4"
+                      name="dateid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].ExternalColumns[day]"
+                      dataType="i4"
+                      name="day" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].ExternalColumns[month]"
+                      dataType="i4"
+                      name="month" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].ExternalColumns[quarter]"
+                      dataType="i4"
+                      name="quarter" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Error Output].Columns[dateid]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Error Output].Columns[dateid]"
+                      name="dateid" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Error Output].Columns[year]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Error Output].Columns[year]"
+                      name="year" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Flat File Output"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Output"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Output.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input].Columns[userid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="userid"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input].ExternalColumns[userid]"
+                      lineageId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output].Columns[userid]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input].ExternalColumns[year]"
+                      lineageId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output].Columns[year]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input].Columns[totAnswer]"
+                      cachedDataType="ui8"
+                      cachedName="totAnswer"
+                      cachedSortKeyPosition="-1"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input].ExternalColumns[totAnswer]"
+                      lineageId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output].Columns[totAnswer]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input].ExternalColumns[userid]"
+                      dataType="i4"
+                      name="userid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input].ExternalColumns[totAnswer]"
+                      dataType="i4"
+                      name="totAnswer" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Merging by dateid"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merging by dateid"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Left Input].Columns[dateid]"
+                      cachedDataType="i4"
+                      cachedName="dateid"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output].Columns[dateid]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Left Input].Columns[answerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="answerid"
+                      lineageId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output].Columns[answerid]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Left Input].Columns[userid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="userid"
+                      lineageId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output].Columns[userid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Right Input].Columns[dateid]"
+                      cachedDataType="i4"
+                      cachedName="dateid"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sorting date by dateid.Outputs[Sort Output].Columns[dateid]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Right Input].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      lineageId="Package\Data Flow Task\Sorting date by dateid.Outputs[Sort Output].Columns[year]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[year]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[year]"
+                      name="year">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Right Input].Columns[year]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[answerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[answerid]"
+                      name="answerid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Left Input].Columns[answerid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output].Columns[userid]"
+                      name="userid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Left Input].Columns[userid]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sorting answers by dateid"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sorting answers by dateid"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sorting answers by dateid.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting answers by dateid.Inputs[Sort Input].Columns[answerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="answerid"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[answerid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting answers by dateid.Inputs[Sort Input].Columns[userid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="userid"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[userid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting answers by dateid.Inputs[Sort Input].Columns[dateid]"
+                      cachedDataType="i4"
+                      cachedName="dateid"
+                      lineageId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[dateid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output].Columns[answerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output].Columns[answerid]"
+                      name="answerid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[answerid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output].Columns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output].Columns[userid]"
+                      name="userid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[userid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output].Columns[dateid]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output].Columns[dateid]"
+                      name="dateid"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output].Columns[dateid]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sorting by totAnswer"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sorting by totAnswer"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sorting by totAnswer.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting by totAnswer.Inputs[Sort Input].Columns[totAnswer]"
+                      cachedDataType="ui8"
+                      cachedName="totAnswer"
+                      lineageId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[totAnswer]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">-1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting by totAnswer.Inputs[Sort Input].Columns[userid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="userid"
+                      lineageId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[userid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting by totAnswer.Inputs[Sort Input].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      lineageId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output].Columns[totAnswer]"
+                      dataType="ui8"
+                      lineageId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output].Columns[totAnswer]"
+                      name="totAnswer"
+                      sortKeyPosition="-1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[totAnswer]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output].Columns[userid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output].Columns[userid]"
+                      name="userid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[userid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output].Columns[year]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output].Columns[year]"
+                      name="year">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1].Columns[year]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sorting date by dateid"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sorting date by dateid"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sorting date by dateid.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting date by dateid.Inputs[Sort Input].Columns[dateid]"
+                      cachedDataType="i4"
+                      cachedName="dateid"
+                      lineageId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].Columns[dateid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sorting date by dateid.Inputs[Sort Input].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      lineageId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].Columns[year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sorting date by dateid.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting date by dateid.Outputs[Sort Output].Columns[dateid]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sorting date by dateid.Outputs[Sort Output].Columns[dateid]"
+                      name="dateid"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].Columns[dateid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sorting date by dateid.Outputs[Sort Output].Columns[year]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sorting date by dateid.Outputs[Sort Output].Columns[year]"
+                      name="year">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output].Columns[year]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Aggregate Output 1]"
+              endId="Package\Data Flow Task\Sorting by totAnswer.Inputs[Sort Input]"
+              name="Aggregate Output 1"
+              startId="Package\Data Flow Task\Aggregating totAnswer.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Merge Join Output]"
+              endId="Package\Data Flow Task\Aggregating totAnswer.Inputs[Aggregate Input 1]"
+              name="Merge Join Output"
+              startId="Package\Data Flow Task\Merging by dateid.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Sorting answers by dateid.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Answer Access.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task\Sorting date by dateid.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Date Access.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output]"
+              endId="Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sorting answers by dateid.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output1]"
+              endId="Package\Data Flow Task\Merging by dateid.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sorting date by dateid.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output2]"
+              endId="Package\Data Flow Task\Flat File Output.Inputs[Flat File Destination Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sorting by totAnswer.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="66.2142867482439,49.8529417985038" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="129.6,50.4"
+          Id="Package\Data Flow Task\Sorting answers by dateid"
+          TopLeft="139.349207606851,132.794118590834" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Data Flow Task\Merging by dateid"
+          TopLeft="212.222225836345,210.536884371935" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Data Flow Task\Sorting by totAnswer"
+          TopLeft="427.642864331908,135.910129574687" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Data Flow Task\Date Access"
+          TopLeft="282.770411352462,67.8340332254407" />
+        <NodeLayout
+          Size="129.6,50.4"
+          Id="Package\Data Flow Task\Sorting date by dateid"
+          TopLeft="285.042858967489,133.147058930776" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Data Flow Task\Answer Access"
+          TopLeft="128.229593926807,68.3151269313786" />
+        <NodeLayout
+          Size="186.4,41.6"
+          Id="Package\Data Flow Task\Aggregating totAnswer"
+          TopLeft="412.234700804202,211.739215167913" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task\Flat File Output"
+          TopLeft="567.563501124479,68.4307141877103" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output2]"
+          TopLeft="516.042864331908,135.910129574687">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.720636792571,-25.8794153869767"
+              Start="0,0"
+              End="126.720636792571,-18.3794153869767">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-8.93970769348836" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-8.93970769348836"
+                    Point2="0,-12.9397076934884"
+                    Point3="4,-12.9397076934884" />
+                  <mssgle:LineSegment
+                    End="122.720636792571,-12.9397076934884" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122.720636792571,-12.9397076934884"
+                    Point2="126.720636792571,-12.9397076934884"
+                    Point3="126.720636792571,-16.9397076934884" />
+                  <mssgle:LineSegment
+                    End="126.720636792571,-18.3794153869767" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output1]"
+          TopLeft="349.842858967489,183.547058930776">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-56.0206331311444,26.9898254411591"
+              Start="0,0"
+              End="-56.0206331311444,19.4898254411591">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.49491272057956" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.49491272057956"
+                    Point2="0,13.4949127205796"
+                    Point3="-4,13.4949127205796" />
+                  <mssgle:LineSegment
+                    End="-52.0206331311444,13.4949127205796" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-52.0206331311444,13.4949127205796"
+                    Point2="-56.0206331311444,13.4949127205796"
+                    Point3="-56.0206331311444,17.4949127205796" />
+                  <mssgle:LineSegment
+                    End="-56.0206331311444,19.4898254411591" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="204.149207606851,183.194118590834">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.8730182294935,27.3427657811011"
+              Start="0,0"
+              End="50.8730182294935,19.8427657811011">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.9354476506258" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.9354476506258"
+                    Point2="0,17.9354476506258"
+                    Point3="4,17.9354476506258" />
+                  <mssgle:LineSegment
+                    End="46.8730182294935,17.9354476506258" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.8730182294935,17.9354476506258"
+                    Point2="50.8730182294935,17.9354476506258"
+                    Point3="50.8730182294935,21.9354476506258" />
+                  <mssgle:LineSegment
+                    End="50.8730182294935,19.8427657811011" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="350.106635159976,109.434033225441">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.713025705335"
+              Start="0,0"
+              End="0,16.213025705335">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.213025705335" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="202.989400766829,109.915126931379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.8789916594554"
+              Start="0,0"
+              End="0,15.3789916594554">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.3789916594554" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Merge Join Output]"
+          TopLeft="375.422225836345,231.938049769924">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.8124749678574,0"
+              Start="0,0"
+              End="29.3124749678574,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.3124749678574,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Aggregate Output 1]"
+          TopLeft="505.434700804202,211.739215167913">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.608163527706,-34.229085593226"
+              Start="0,0"
+              End="10.608163527706,-26.729085593226">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-13.114542796613" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-13.114542796613"
+                    Point2="0,-17.114542796613"
+                    Point3="4,-17.114542796613" />
+                  <mssgle:LineSegment
+                    End="6.60816352770604,-17.114542796613" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.60816352770604,-17.114542796613"
+                    Point2="10.608163527706,-17.114542796613"
+                    Point3="10.608163527706,-21.114542796613" />
+                  <mssgle:LineSegment
+                    End="10.608163527706,-26.729085593226" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Date Access">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Answer Access">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

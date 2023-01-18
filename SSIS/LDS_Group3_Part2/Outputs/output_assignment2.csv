@@ -1,0 +1,77 @@
+region,totCorrectRegion,totCorrectCountry,%w.r.t.Country
+northern territory              ,2645,14344,0.1843
+new south wales                 ,802,14344,0.0559
+queensland                      ,2369,14344,0.1651
+victoria                        ,1563,14344,0.1089
+western australia               ,3650,14344,0.2544
+south australia                 ,1962,14344,0.1367
+tasmania                        ,1353,14344,0.0943
+brussels                        ,4463,12104,0.3687
+wallonia                        ,4725,12104,0.3903
+flanders                        ,2916,12104,0.2409
+the north                       ,3336,19254,0.1732
+ontario                         ,3085,19254,0.1602
+atlantic provinces              ,2946,19254,0.153
+prairie provinces               ,3271,19254,0.1698
+british columbia                ,3445,19254,0.1789
+quebec                          ,3171,19254,0.1646
+north east france               ,2198,15576,0.1411
+upland france                   ,3670,15576,0.2356
+le midi france                  ,2246,15576,0.1441
+heart of france                 ,2814,15576,0.1806
+southwest france                ,2241,15576,0.1438
+north west france               ,2407,15576,0.1545
+saxony                          ,7327,98976,0.074
+hessen                          ,6639,98976,0.067
+mecklenburg-vorpommern          ,6036,98976,0.0609
+rhineland-palatinate            ,4936,98976,0.0498
+berlin                          ,5015,98976,0.0506
+schleswig-holstein              ,5950,98976,0.0601
+lower saxony                    ,6656,98976,0.0672
+hamburg                         ,4256,98976,0.043
+saxony-anhalt                   ,7357,98976,0.0743
+saarland                        ,6156,98976,0.0621
+brandenburg                     ,5539,98976,0.0559
+north rhine-westphalla          ,6546,98976,0.0661
+baden-wuttemberg                ,8224,98976,0.083
+thuringia                       ,6395,98976,0.0646
+bavaria                         ,6892,98976,0.0696
+bremen                          ,5052,98976,0.051
+ulster                          ,4499,18608,0.2417
+leinster                        ,3795,18608,0.2039
+munster                         ,5710,18608,0.3068
+connaught                       ,4604,18608,0.2474
+north italy                     ,5905,15742,0.3751
+south italy                     ,5965,15742,0.3789
+center italy                    ,3872,15742,0.2459
+north island-central west       ,1394,13218,0.1054
+north island-central east       ,1362,13218,0.103
+north island-southern           ,2299,13218,0.1739
+northern island-northern        ,3211,13218,0.2429
+south island northern           ,1464,13218,0.1107
+south island-central            ,1674,13218,0.1266
+south island-southern           ,1814,13218,0.1372
+castilla                        ,9293,51464,0.1805
+andalucia                       ,8547,51464,0.166
+galicia                         ,8688,51464,0.1688
+asturleon                       ,10157,51464,0.1973
+vascongadas                     ,7378,51464,0.1433
+aragon                          ,7401,51464,0.1438
+east england                    ,5320,63118,0.0842
+wales                           ,6282,63118,0.0995
+east midlands                   ,6584,63118,0.1043
+west midlands                   ,6056,63118,0.0959
+south west england              ,4114,63118,0.0651
+scotland                        ,5451,63118,0.0863
+yorkshire                       ,4458,63118,0.0706
+south east england              ,5597,63118,0.0886
+north west england              ,6096,63118,0.0965
+north east england              ,5877,63118,0.0931
+london                          ,7283,63118,0.1153
+mid-atalntic                    ,3575,19833,0.1802
+south west usa                  ,2161,19833,0.1089
+north west usa                  ,3176,19833,0.1601
+mid-west usa                    ,2533,19833,0.1277
+south-east usa                  ,3618,19833,0.1824
+west usa                        ,2642,19833,0.1332
+north-east usa                  ,2128,19833,0.1072
