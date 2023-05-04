@@ -10,7 +10,7 @@ import numpy as np
 import math
 
 # File to get data from
-source_file = 'answerdatacorrect.csv'
+source_file = 'Data/answerdatacorrect.csv'
 
 # %% ASSIGNMENT 1.1
 """
